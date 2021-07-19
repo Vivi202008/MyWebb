@@ -1,0 +1,176 @@
+body {
+  background-color: rgb(191, 191, 204);  
+  font-family: sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5; 
+  width: 1024px;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+<!--Grid-area-->
+.siteName {
+  grid-area: siteName;
+  background-color: #454b46;
+}
+.nav{
+  white-space:nowrap;
+}
+.nav  li {
+  display: inline-grid;
+  align-items: center;
+  font-size: large;
+  width: 30%;
+}
+.link {
+  grid-area: link;
+  font-size: x-large;
+}
+
+.headwrapper{
+  grid-area: header;
+  display: grid;
+  grid-template-areas: 'siteName siteName nav nav nav . link';
+  gap: 10px;
+  align-items: center;
+  justify-content: stretch;
+  width:100%;
+  height:100%;
+  background-color: rgb(155, 155, 155);
+}
+
+.subText {
+  grid-area: subText;
+  padding: 0.6em;
+  text-align: justify;
+  background-color: rgb(136, 128, 128);
+}
+
+.content1 {
+  grid-area: content1;
+  text-align: justify;
+  background-color:rgb(149, 185, 185);
+}
+.content2 {
+  grid-area: content2;
+  text-align: justify;
+  background-color: #b8b89c;
+}
+
+article{
+  padding: 0.6em;
+}
+
+.side {
+grid-area: sidebar;
+background-color:rgb(151, 161, 179)
+}
+
+.main-footer {
+grid-area: footer;
+background-color: rgb(163, 163, 187);
+text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .wrapperIndex {
+    display: grid;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-areas:
+      "header header header header header header header"
+      "subText subText subText subText subText subText sidebar"
+      "content1 content1 content1 content2 content2 content2  sidebar"
+      "footer footer  footer footer footer  footer footer"
+   }
+   nav ul {
+     flex-direction: column;
+   }
+}
+
+.loginHeader{
+  grid-area: loginHeader;
+  text-transform: uppercase;
+  align-self: center;
+}
+
+form button{
+  border: 2px solid black;
+  border-radius: 6px;
+
+  width: 80%;
+  font-size: larger; 
+}
+
+.reset{
+  background-color: rgb(144, 240, 132);
+  margin-bottom: 2px;
+}
+
+.reset:hover{
+  background-color:dodgerblue;
+  transition: 500ms;
+  font-weight: bolder;  
+}
+
+.signin{
+  background-color: rgb(230, 55, 137);
+  margin-bottom: 2px;
+}
+.signin:hover{
+  background-color: rgb(240, 180, 15);
+  transition: 500ms;
+  font-weight: bolder;
+}
+  
+
+form{
+  border:3px solid dodgerblue;
+  border-radius: 9px;
+  padding:1em;
+  width: 100%;}
+
+.main{
+  display: grid;
+  line-height: 2;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .wrapperLogin {
+    display: grid;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-areas:
+      "header header header header header header header"
+      ". login . . . . ."
+      ". main main main main . ."
+      "footer footer  footer footer footer  footer footer"
+   }
+   nav ul {
+     flex-direction: column;
+   }
+}
+
+.main-login{
+  display: inline;
+  grid-area: main ;
+  padding: 1em;
+  align-items: center;
+  justify-content: center;
+}
+
+span.ingredient {
+  color:green;
+  font-size: large;
+  border: 1px solid yellow;
+  
+}
