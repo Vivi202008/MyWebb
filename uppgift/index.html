@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>My First JavaScript page</title>
+  <link rel="stylesheet" href="/css/site.css" />
+</head>
+
+<body>
+  <div class="gameIndex">
+
+    <div id="board" class="board"></div>
+
+    <div class="textResult">
+      <h1>Sokoban Game !!!</h1>
+      <p>Sokoban is a puzzle game genre in which the player pushes boxes around in a warehouse, trying to get them to storage locations. </p>
+      <p> The player is confined to the board and may move horizontally or vertically onto empty squares (never through walls or boxes). The player can move a box by walking up to it and push it to the square beyond. Boxes cannot be  pulled, and they cannot be pushed to squares with walls or other boxes. The number of boxes equals the number of storage locations. The puzzle is solved when all boxes are placed at storage locations.</p>
+      <p >Legend:</p>
+      <p> <span style='font-size:20px;color:red'>&#9607;-----Box&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style='font-size:20px;color:blue'>&#9607;-----Player</span><br> 
+        <span style='font-size:20px;color:gray'>&#9607;-----Wall&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style='font-size:20px;color:yellow'>&#9607;-----Goal</span></p>
+      <h2 id="gameResult">Come and play!<span style='font-size:30px;'>&#128516;</span></h2>
+    </div>
+
+  </div>
+
+  <footer class="main-footer">
+    <p>
+        Copyright <span class=ingredient>&copy; Wei Cao </span> 2021
+    </p>
+</footer>
+
+  <script src="/js/SokobanBase.js"></script>
+  <script src="/js/Sokoban.js"></script>
+</body>
+
+</html>

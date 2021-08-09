@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!--needed html5-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>My first javaScript page</title>
+</head>
+
+<body>
+    <h1>Greetingäs!!!</h1>
+    <div id="content">
+        <button onclick="changeToBackground('Red')">Red</button>
+        <button onclick="changeToBackground('Blue')">Blue</button>
+        <button onclick="changeToBackground('Yellow')">Yellow</button>
+        <button onclick="changeToBackground('Pink')">Pink</button>
+        <button onclick="changeToBackground('White')">White</button>
+        <button onclick="changeToBackground('Black')">Black</button>
+        <button onclick="changeToBackground('Purple')">Purple</button>
+        <button onclick="changeToBackground('Gold')">Gold</button>
+        <button onclick="changeToBackground('Orange')">Orange</button>
+        <button onclick="changeToBackground('Brown')">Brown</button>
+        <button onclick="changeToBackground('Gray')">Gray</button>
+        <button onclick="changeToBackground('Silver')">Silver</button>
+        <button id="greenBtn">Green </button>
+        <button onclick="randomColor()">Random color </button>
+    </div>
+
+    <script>
+        document.body.style.background = "lightgray";
+
+        var myContent = document.getElementById("content");
+
+        myContent.style.height = "100px";
+        myContent.style.width = "300px";
+        myContent.style.background = "white";
+
+        function randomColor() {
+            //myContent.style.background = '#' + (Math.random() * 0xffffff << 0).toString(16);
+            myContent.style.background = 'rgba(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',0.8)';;
+        }
+
+        function changeToBackground(colorTo) {
+            myContent.style.background = colorTo;
+        }
+
+        //document.getElementById("greenBtn").addEventListener("click",()=>{
+        //    changeToBackground("green");----same!!
+        //});
+
+        document.getElementById("greenBtn").addEventListener("click", function () {
+            changeToBackground("green");
+        });
+    </script>
+
+    <script>
+        function showtime() {
+            var myDate = new Date();
+            const xmas = new Date(2021, 11, 25);
+            var days = parseInt((xmas - myDate) / (1000 * 60 * 60 * 24));
+
+            myDateTime.style.background = "lightblue";
+            myDateTime.style.width = "300px";
+            myDateTime.style.height = "50px";
+            var day;
+            switch (myDate.getDay()) {
+                case 1:
+                    day = "Monday";
+                    break;
+                case 2:
+                    day = "Tuesday";
+                    break;
+                case 3:
+                    day = "Wednesday";
+                    break;
+                case 4:
+                    day = "Thursday";
+                    break;
+                case 5:
+                    day = "Friday";
+                    break;
+                case 6:
+                    day = "Saturday";
+                    break;
+                case 0:
+                    day = "Sunday";
+                    break;
+            }
+            document.getElementById("myDateTime").innerHTML = "Now is " + day + ", " + myDate.getDate() + "/" + myDate.getMonth() + "/" + myDate.getFullYear() + " ," + days + " days till Chrismax.   " + myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds();
+            myDateTime.style.background = 'rgba(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',0.8)';;
+            setTimeout("showtime()", 1000);
+        }
+    </script>
+
+    <div id="myDateTime">
+        <script>showtime();</script>
+    </div>
+
+    <div>
+        <p>--------------------------------------------------------</p>
+        <label>Enter a year: </label>
+        <input id="year" name="myYear" type="text" />
+        <button onclick="leapYear()">Check leapYear </button>
+        <label id="result">Result</label>
+        <p>--------------------------------------------------------</p>
+    </div>
+
+    <script>
+        function leapYear() {
+            let year = document.getElementById("year").value;
+            let date11 = new Date(year, 00, 01);
+            let dateOfYear11;
+            if (date11.getDay() === 0) {
+                dateOfYear11 = "Sunday. "
+            } else {
+                dateOfYear11 = "not Sunday. "
+            }
+
+            if (!(/(^[1-9]\d*$)/.test(year))) {
+                if (year == "") {
+                    document.getElementById("result").innerHTML = " The year can not be null! Enter a year";
+                } else {
+                    document.getElementById("result").innerHTML = " The year is not a positive integer ! Enter a year";
+                }
+            } else {
+                if ((year % 4 === 0 && year % 100 != 0) || year % 400 === 0) {
+                    document.getElementById("result").innerHTML = " The year " + year + " is a leap year. And 1st of january is " + dateOfYear11;
+                } else {
+                    document.getElementById("result").innerHTML = " The year " + year + " is  not   leap year. And 1st of january is " + dateOfYear11 + date11.getDay();
+                }
+            }
+        }
+    </script>
+
+    <div class="form">
+        <label for="guessField">Enter a guess: </label>
+        <input type="text" id="guessField" class="guessField">
+        <input type="submit" value="Submit guess" class="guessSubmit" id="submitguess">
+        <label id="resultGuess">Result</label>
+        <p>--------------------------------------------------------</p>
+    </div>
+
+    <script>
+        // random value generated
+        var y = Math.floor(Math.random() * 10 + 1);
+
+        document.getElementById("submitguess").onclick = function () {
+
+            // number guessed by user     
+            var x = document.getElementById("guessField").value;
+
+            if (!(/(^[1-9]\d*$)/.test(x))) {
+                document.getElementById("resultGuess").innerHTML = " This is not a positive integer ! Enter a number(1-10)";
+            } else {
+                if (x > 10) {
+                    document.getElementById("resultGuess").innerHTML = "This number is more than 10. Enter a number(1-10)";
+                } else {
+                    if (x == y) {
+                        document.getElementById("resultGuess").innerHTML = "Good Job!!!" + y;
+                        y = Math.floor(Math.random() * 10 + 1);
+                    } else {
+                        document.getElementById("resultGuess").innerHTML = "No, Did not match..." + y;
+                    }
+                }
+            }
+        }
+    </script>
+
+    <div>
+        <label>Enter a string of numbers or characters: </label>
+        <input id="aString" name="myString" type="text" />
+        <button onclick="reserseString()">Reverse </button>
+        <label id="resultString">Result</label>
+        <p>--------------------------------------------------------</p>
+    </div>
+
+    <script>
+        function reserseString() {
+            var myString = document.getElementById("aString").value;
+
+            if (myString === "") {
+                document.getElementById("resultString").innerHTML = "Input is null. Enter a string!";
+            } else {
+                /*var newString = myString.split("").reverse().join("");  
+                Step 1. Use the split() method to return a new array
+                    var splitString = str.split(""); // var splitString = "hello".split("");     // ["h", "e", "l", "l", "o"]
+                Step 2. Use the reverse() method to reverse the new created array
+                    var reverseArray = splitString.reverse(); // var reverseArray = ["h", "e", "l", "l", "o"].reverse();    // ["o", "l", "l", "e", "h"]
+                 Step 3. Use the join() method to join all elements of the array into a string
+                    var joinArray = reverseArray.join(""); // var joinArray = ["o", "l", "l", "e", "h"].join("");    // "olleh"
+                */
+
+                var newString = "";
+                for (var i = myString.length - 1; i >= 0; i--) {
+                    newString += myString[i];
+                }
+                document.getElementById("resultString").innerHTML = myString + " reserse to " + newString;
+            }
+        }
+    </script>
+
+    <div>
+        <label>Enter a word: </label>
+        <input id="word" name="myWord" type="text" />
+        <button onclick="combineSort()">Combine and sort</button>
+        <label id="resultWord">Result</label>
+        <p>--------------------------------------------------------</p>
+    </div>
+
+    <script>
+        function combineSort() {
+            var myWord = document.getElementById("word").value;
+
+            if (myWord === "") {
+                document.getElementById("resultWord").innerHTML = "The word is null. Enter a word!!";
+            } else {
+                var combination = "";
+
+                for (var i = 0; i < myWord.length; i++) {
+                    for (var j = 1; j <= myWord.length; j++) {
+                        combination = combination + myWord.slice(i, j) + "  ";
+                    }
+                }
+
+                var sortWord = "";
+                var splitWord = myWord.split("");
+                splitWord = splitWord.sort();
+                sortWord = splitWord.join("");
+                document.getElementById("resultWord").innerHTML = myWord + " manipulates to: " + sortWord + ";  combinations are: " + combination;
+            }
+        }
+    </script>
+
+    <div>
+        <label>Enter a sentence: </label>
+        <input id="sentence" name="mySentence" type="text" />
+        <button onclick="convertFind()">Convert and Find</button>
+        <label id="resultSentence">Result</label>
+        <p>--------------------------------------------------------</p>
+    </div>
+
+    <script>
+        function convertFind() {
+            var mySentence = document.getElementById("sentence").value;
+
+            if (mySentence === "") {
+                document.getElementById("resultSentence").innerHTML = "The sentence is null. Enter a sentence!!";
+            } else {
+                var array = mySentence.split(" ");
+                for (var i = 0; i < array.length; i++) {
+                    array[i] = array[i].replace(array[i][0], array[i][0].toUpperCase());
+                }
+                var newSentence = array.join(" ");
+
+                var longWord = array[0];
+                var longWords=longWord;
+
+                for (var i = 1; i < array.length; i++) {
+                    if (array[i].length > longWord.length) {
+                        longWord = array[i];
+                        longWords=longWord;
+                        alert("array"+i+"long")
+                    } else {
+                        if (array[i].length = longWord.length) {
+                            longWords =  longWords+", "+array[i];
+                            alert("array"+i+"same")
+                        }else{
+                            alert("array"+i+"short")
+                        }
+                    }
+                }
+                document.getElementById("resultSentence").innerHTML = mySentence + " -convert to ----" + newSentence + " , " + " the longest word is " + longWords;
+            }
+        }
+    </script>
+</body>
+
+</html>

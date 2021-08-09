@@ -1,0 +1,66 @@
+body {
+  background-color: rgb(191, 191, 204);  
+  font-family: sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5; 
+   text-align: center;
+}
+  .tile-space {
+    background-color: lightgray;
+    border: 1px solid rgb(87, 82, 82);
+  }
+    
+  .tile-wall {
+    background-color: gray;
+  }
+  
+  .entity-block {
+    background-color: red;
+  }
+  .tile-goal {
+    background-color: yellow;
+  }
+  
+  .entity-block.tile-goal {
+    background-color: green;
+  }
+  
+  .entity-player {
+    background-color: blueviolet;
+  }
+  
+   .board{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+    width: 800px;
+    height: 600px;
+    margin-left: 50px;
+    background-color: silver;
+    padding: 6px;
+  } 
+
+  span.ingredient {
+    color:green;
+    font-size: large;
+    border: 1px solid yellow;
+    
+  }
+
+  .textResult{
+    width: 90%;
+    text-align: justify;
+  }
+
+ .gameIndex {
+      display: grid;
+      align-items: center;
+      grid-row-gap: 20px;
+      grid-column-gap: 20px;
+      grid-template-columns: 1fr 1fr ;
+      grid-template-areas:
+       "board textResult"
+       "footer footer"
+     }
+
+  

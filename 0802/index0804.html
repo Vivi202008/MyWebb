@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--needed html5-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>My first javaScript page</title>
+</head>
+
+<body>
+    <h1>Greeting's!!!</h1>
+    <button onclick="happyNumber()">Happy number</button>
+    <div id="result">
+        <p></p>
+        <label id="resultHappyNumber">Result</label>
+    </div>
+
+    <script>
+        document.body.style.background = "lightgray";
+
+        function happyNumber() {
+            var resultHappy = ":-) Happy numbers are:  ";
+            var resultUnhappy = ":-( UnHappy numbers are:  ";
+
+            for (var k = 1; k < 101; k++) {
+                var number = k;
+                var n = [];
+
+                do {
+                    var newNumber = 0;
+                    for (var i = 0; i < number.toString().length; i++) {
+                        n[i] = Math.floor(number % (Math.pow(10, (i + 1))) / Math.pow(10, i));
+                        newNumber = newNumber + Math.pow(n[i], 2);
+                    }
+                    number = newNumber;
+                } while ((number != 1) && (number != 4))
+
+                if (number === 1)
+                    //alert(k+"  is a happy number!  :-)");
+                    resultHappy = resultHappy + k + "  ";
+                if (number === 4)
+                    //alert(k+"  is not a happy number!  :-(");
+                    resultUnhappy = resultUnhappy + k + "  ";
+            }
+
+            document.getElementById("resultHappyNumber").innerHTML = resultHappy + "////////////" + resultUnhappy;
+        }
+
+    </script>
+</body>
+
+</html>
