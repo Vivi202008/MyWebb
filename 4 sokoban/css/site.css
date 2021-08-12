@@ -4,7 +4,6 @@ body {
   margin-left: auto;
   margin-right: auto;
   line-height: 1.5; 
-   text-align: center;
 }
   .tile-space {
     background-color: lightgray;
@@ -43,11 +42,10 @@ body {
   span.ingredient {
     color:green;
     font-size: large;
-    border: 1px solid yellow;
-    
+    border: 1px solid yellow; 
   }
 
-  .textResult{
+  .gameResult{
     width: 90%;
     text-align: justify;
   }
@@ -59,8 +57,20 @@ body {
       grid-column-gap: 20px;
       grid-template-columns: 1fr 1fr ;
       grid-template-areas:
-       "board textResult"
+       "board aboutGame"
        "footer footer"
      }
 
-  
+.legend{
+  font-size: 18px;
+  align-items: center;
+  align-self: center;
+  width: 100%;
+}
+
+.arrow{
+  font-size: 18px;
+  align-items: center;
+  align-self: center;
+  width: 100%;
+}

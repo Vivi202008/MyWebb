@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>My First JavaScript page</title>
+  <link rel="stylesheet" href="/css/site.css" />
+</head>
+
+<body>
+  <div class="gameIndex">
+
+    <div id="board" class="board"></div>
+
+    <div class="aboutGame">
+      <h1>Sokoban Game !!!</h1>
+      <p>Sokoban is a puzzle game genre in which the player pushes boxes around in a warehouse, trying to get them to
+        storage locations. </p>
+      <p> The player is confined to the board and may move horizontally or vertically onto empty squares (never through
+        walls or boxes).
+        The player can move a box by walking up to it and push it to the square beyond. Boxes cannot be pulled, and they
+        cannot be pushed
+        to squares with walls or other boxes. The number of boxes equals the number of storage locations. The puzzle is
+        solved when all
+        boxes are placed at storage locations.</p>
+
+      <table class="legend">
+        <tr>
+          <th><label>Legend:</label></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <td><label style='color:red'>&#9607;-----Box</label></td>
+          <td> <label style='color:blueviolet'>&#9607;-----Player</label></td>
+          <td> <label style='color:dimgray'>&#9607;-----Floor</label>  </td>
+        </tr>
+        <tr>
+          <td> <label style='color:gray'>&#9607;-----Wall</label></td>
+          <td><label style='color:yellow'>&#9607;-----Goal</label></td>
+          <td> <label style='color:green'>&#9607;-----Box In Goal</label></td>
+        </tr>
+      </table>
+      <br>
+      <table class="arrow">
+        <tr>
+          <td> <label>&#10145;Move to the right</label> </td>
+          <td> <label>&#11013;Move to the right</label></td>
+        </tr>
+        <tr>
+          <td><label>&nbsp;&#11014;&nbsp;Move upwards</label></td>
+          <td> <label>&nbsp;&#11015;&nbsp;Move downwards</label></td>
+        </tr>
+      </table>
+
+      <h2 id="gameResult">Come and play!<span style='font-size:30px;'>&#128516;</span></h2>
+      <h2 id="moveTimes"></h2>
+    </div>
+  </div>
+
+  <footer class="main-footer">
+    &nbsp;&nbsp;Copyright <span class=ingredient>&copy; Wei Cao </span> 2021 </footer>
+
+  <script src="/js/SokobanBase.js"></script>
+  <script src="/js/Sokoban.js"></script>
+</body>
+
+</html>

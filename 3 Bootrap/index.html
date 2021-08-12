@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chinese delicious foods----- Bootstrap </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- import Bootstrap -->
+    <link href=" https://bootswatch.com/5/cosmo/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .carousel-inner img {
+            width: auto;
+            height: 40%;
+            /* Set width to 100% */
+            align-items: center;
+            margin: auto;
+        }
+
+        .carousel-caption h3 {
+            color: #fff !important;
+        }
+
+        @media (max-width: 600px) {
+            .carousel-caption {
+                display: none;
+                /* Hide the carousel text when the screen is less than 600 pixels wide */
+            }
+        }
+
+        .logo {
+            width: 90%;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-nav" href="#"><img src="logo.png" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home
+                                <span class="visually-hidden">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Food Culture</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Chinese Cooking</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Travel and Taste</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle show" data-bs-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="true">More</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">What the Chinese Eat</a>
+                                <a class="dropdown-item" href="#">Regional Food Types</a>
+                                <a class="dropdown-item" href="#">Most Popular Chinese Food </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Other...</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-sm-2" type="text" placeholder="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="https://data.chinahighlights.com/image/travelguide/top-banner/chinese-food-top-banner-jiaozi-pc.jpg"
+                    alt="The Delicious Foods">
+                <div class="carousel-caption">
+                    <h3>The Delicious Foods</h3>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="https://data.chinahighlights.com/image/travelguide/festival/chinese-festival-top-banner-mid-autumn-festival-pc.jpg"
+                    alt="Chinese Mooncakes">
+                <div class="carousel-caption">
+                    <h3>Chinese Mooncakes</h3>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="https://www.chinahighlights.com/image/tour-detail/china-tour/family-tours-top-banner-beijing-hutong.jpg"
+                    alt="">
+                <div class="carousel-caption">
+                    <h3>Street Foods</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <div class="container-fluid">
+        <br>
+        <div class="row">
+            <div class="col-sm-1" style="background-color:white;">
+                <ul class="nav nav-pills nav-stacked flex-column ">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Foot culture</a></li>
+                    <li><a href="#">Cooking mat</a></li>
+                    <li><a href="#">Travel and eat</a></li>
+                    <li></li>
+                    <li></li>
+
+                </ul>
+                <img class="logo" src="logo.jpg" alt="">
+
+
+            </div>
+            <div class="col-sm-8" style="background-color:white;">
+                <div class="row">
+                    <div class="col-sm-6" style="background-color:white;">
+                        <div id="article3" class="article3"> 
+                        <h3> 6 of China’s Best Regional Foods!</h3>
+                        <h3>— You’ll Love These!</h3>
+                       <p>Food has a special meaning to the Chinese people. With thousands of years of history and
+                        development, there is a remarkable diversity of cuisines and food in China, which will take ages
+                        if you want to taste them all. China Highlights has listed the following must-taste Chinese food
+                        in major tourist destinations for your reference.</p>
+
+                        <a class="Details" href="https://www.chinahighlights.com/travelguide/must-taste-chinese-food.htm">Details</a>
+                       </div>
+
+
+                    <div  id="article4" class="article4"></div>
+
+                        <h3>Chinese Food Culture</h3>
+                        <p>Chinese food is famous all over the world, but you may be shocked by its surprising range and
+                            variety of ingredients if you've only eaten in Chinese restaurants abroad. Chinese food has
+                            countless delicious and fantastic dishes. And people from different areas have different
+                            cuisine types, which can be bland, sweet, salty, spicy, or sour.</p>
+                        <p>As an ancient civilization, China pays great attention to established etiquette. With
+                            thousands of years' development, China has its own unique dinning culture and etiquette,
+                            which foreign visitors may find quite different from what they are used to, and even
+                            consider weird.</p>
+                            <a class="Details" href="https://www.chinahighlights.com/travelguide/chinese-food/chinese-food-symbolism.htm">Details</a>
+                    </div>
+                    <div class="col-sm-6" style="background-color:white;">
+                            <div id="article1" class="article1">
+                                <h3>Chinese Cooking — Recipes and Instructions</h3>
+                                <p>Chinese cooking is renowned throughout the world. Chinese food has a distinctive
+                                    culinary style all its own. The emphasis is on fresh, seasonal ingredients, prepared
+                                    with a minimum of fuss and beautifully balanced for color, texture, and
+                                    presentation. See The 7 Top Chinese Cooking Methods.
+                                    Our Chinese cooking recipes teach you how to cook delicious Chinese dishes, more
+                                    cooking recipes.</p>
+                                    <a class="Details" href="https://www.chinahighlights.com/travelguide/chinese-food/cooking.htm">Details</a>
+                            </div>
+                            <div id="article2" class="article2">
+                                <h3>Travel with China Highlights and Taste Delicious Chinese Food</h3>
+                                <p> Want to taste authentic Chinese food? China Highlights tours provide you an
+                                    opportunity. See our most recommended Chinese food tours, which combine must-see
+                                    attractions in China with meals in carefully selected restaurants.</p>
+                                    <ul><li>The Flavor of China — a 12-Day Beijing, Xi'an, Guilin, and Hong Kong cuisine tour
+                                </li>
+                                <li>A Culinary Adventure — an 8-Day Beijing, Chengdu, and Guangzhou cuisine tour</li>
+                                </ul>
+                                <p>Or you can contact us and we can tailor-make a Chinese food tour for you based on
+                                    your interests and requirements.</p>
+                                    <a class="Details" href="https://www.chinahighlights.com/travelguide/must-taste-chinese-food.htm">Details</a>
+                       </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-3" style="background-color:white;">
+                <form>
+                    <fieldset>
+                        <h3>Contact us</h3>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" class="form-label mt-4">Telephone number</label>
+                            <input type="number" class="form-control" id="exampleInputPassword1"
+                                placeholder="Telephone number">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleTextarea" class="form-label mt-4">Message</label>
+                            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <br>
+                            <button type="button" class="btn btn-success">Submit</button>
+                            <button type="button" class="btn btn-danger">Reset</button>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <HR style="FILTER:alpha(opacity=100,finishopacity=0,style=1) color=#987cb9 SIZE=3">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="list-unstyled">
+                    <li class="float-end"><a href="#top">Back to top</a></li>
+                    <li>Made by &copy;Wei Cao.</li>
+                    <li>Based on <a href="https://getbootstrap.com/" rel="nofollow">Bootstrap</a>. Icons from <a
+                            href="https://fontawesome.com/" rel="nofollow">Font Awesome</a>. Web fonts from <a
+                            href="https://fonts.google.com/" rel="nofollow">Google</a>.</li>
+
+                </ul>
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

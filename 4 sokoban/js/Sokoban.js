@@ -85,13 +85,19 @@ function onKeyPressListner(event) {
             
             if(tileMap01.mapGrid[y][x]=="BG"){
                 blockInGoal++;
-                document.getElementById("gameResult").innerHTML="You have moved "+blockInGoal+" boxes to goal."
+                if(blockInGoal===1){
+                    document.getElementById("gameResult").innerHTML="You have moved a box to goal."
+                }else{
+                    document.getElementById("gameResult").innerHTML="You have moved "+blockInGoal+" boxes to goal."
+                }
+                
             }
         }
     }
     
     if (blockInGoal===6){
         document.getElementById("gameResult").innerHTML="Wow, you win!!!"
+        document.getElementById("moveTimes").innerHTML="You moved a total of "+moveTimes+" steps.";
     } 
 }
 
@@ -155,6 +161,8 @@ function moveDownwards(x, y) {
     }
 }
 
+let moveTimes=0;
+
 function move(x, y, toX, toY) {
     let start = tileMap01.mapGrid[y][x]
     let end = tileMap01.mapGrid[toY][toX]
@@ -178,9 +186,16 @@ function move(x, y, toX, toY) {
         }
     }
 
-    if (!["W", "B", "BG"].includes(end[0])) {  //Avoid players into the box and the wall
+    if (!["W", "B", "BG"].includes(end[0])) {  //Avoid players into the box or the wall
         if (start[0].includes("P")) {
             moveStartToEnd("P");
+            moveTimes++;   //count times that player have moved.
+            if (moveTimes===1){
+                document.getElementById("moveTimes").innerHTML="You have moved a step. ";
+            }else{
+                document.getElementById("moveTimes").innerHTML="You have moved "+moveTimes+" steps. ";
+            }
+
         } else {
             moveStartToEnd("B");
         }
